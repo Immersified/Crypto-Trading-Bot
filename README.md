@@ -10,22 +10,25 @@
 ## 📌 At a glance
 
 CryptoBot is a **fully automated, multi-exchange algorithmic trading platform** for crypto
-perpetual futures. It runs unattended on a server, turns model-generated signals into live
-orders across exchanges, tracks every position in a database, and exposes a real-time
-dashboard for monitoring performance.
+perpetual futures, built around a **machine-learning price-prediction system**. It runs
+unattended on a server, turns model-generated signals into live orders across exchanges,
+tracks every position in a database, and exposes a real-time dashboard for monitoring
+performance. It has been **live trading Ethereum on Hyperliquid since October 2025.**
 
 | | |
 |---|---|
-| **Domain** | Algorithmic trading / quantitative finance |
+| **Domain** | Algorithmic trading · quantitative finance · applied ML |
 | **Style** | Systematic, model-driven perpetual-futures trading |
+| **Live since** | October 2025 — Ethereum on Hyperliquid |
 | **Exchanges** | Hyperliquid (primary), Bybit, Bitvavo |
-| **Markets** | BTC, ETH, SOL, AVAX, ADA, LINK, DOT, LTC … (USDC-quoted perps) |
+| **Backtested markets** | BTC, ETH, SOL, AVAX, ADA, LINK, DOT, LTC … (USDC-quoted perps) |
 | **Run mode** | 24/7 unattended on a Linux VPS, managed by PM2 |
 | **Scale** | Multi-account / multi-profile — many bots from one engine |
 
-**Built end-to-end by a single developer:** research & strategy modelling, data
-engineering, trade-execution engine, exchange integrations, infrastructure, and a
-full monitoring dashboard.
+**Spans the full stack of an ML trading operation:** research & strategy modelling
+(rule-based filters + a random-forest classifier with weekly walk-forward validation), data
+engineering, a trade-execution engine, exchange integrations, infrastructure, and a full
+monitoring dashboard.
 
 ---
 
@@ -144,13 +147,21 @@ flowchart TB
 
 ---
 
-## 📈 Results & validation
+## 📈 Results & engineering highlights
 
 The strategy is validated through extensive backtesting and calibration runs across multiple
 assets (ETH, SOL, BTC, AVAX, ADA, LINK, DOT, LTC) and market regimes (bull / bear /
 ranging). Each candidate configuration is scored on risk-adjusted metrics — **Sharpe ratio,
 rate-of-return, and drawdown** — and only validated configurations are promoted to live
-trading.
+trading. Selected, measurable outcomes from building and hardening the system:
+
+| Result | Detail |
+|---|---|
+| 🟢 **Live in production since Oct 2025** | Trading Ethereum on Hyperliquid with real capital, unattended. |
+| 🎯 **Closed the sim-to-live gap 4×** | Reduced simulation-to-live profit inaccuracy from **0.216% → 0.052%** by modelling trade-entry delay and reverse-engineering Hyperliquid's execution behaviour. |
+| 🧪 **Cut classifier overfit ~7×** | Diagnosed that a grid-search rule filter was masking feature-level gains; redesigned the test methodology without grid-search, dropping overfit from **12.7% → 1.8%** and lifting accuracy from **62% → 73.5%**. |
+| 🔁 **Robust across regimes** | Redesigned strategy maintains performance across a **2-year** walk-forward, after an earlier version degraded in live trading. |
+| 🗣️ **Stakeholder communication** | Delivered weekly written reports and presentations on performance & methodology to a non-technical advisory board. |
 
 > 📷 *Backtest equity curves and performance tables can be added here as screenshots.*
 
