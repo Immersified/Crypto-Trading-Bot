@@ -1,0 +1,26 @@
+# This is a docs-only repository. Nothing sensitive should ever live here,
+# but these patterns add defense-in-depth against accidental commits.
+
+# Secrets & credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*secret*
+*credential*
+profile-config.json
+**/cookies*.json
+**/*token*
+
+# Local / editor / OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+node_modules/
+__pycache__/
+*.pyc
