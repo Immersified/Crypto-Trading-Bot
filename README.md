@@ -176,6 +176,10 @@ trading. Selected, measurable outcomes from building and hardening the system:
 | **Robust across regimes** | Redesigned strategy maintains performance across a **2-year** walk-forward, after an earlier version degraded in live trading. |
 | **Stakeholder communication** | Delivered weekly written reports and presentations on performance & methodology to a non-technical advisory board. |
 
+Example Result of Backtest:
+<img width="4400" height="1000" alt="Config Performance" src="https://github.com/user-attachments/assets/c2dfa4ce-5fcb-4c7f-a074-8b7ceaf44672" />
+
+
 > *Backtest equity curves and performance tables can be added here as screenshots.*
 
 ---
