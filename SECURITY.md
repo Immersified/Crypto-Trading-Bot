@@ -8,20 +8,20 @@ to demonstrate architecture and engineering — **not** to expose the live syste
 To protect both the trading strategy and any funds under management, this repo contains
 **none** of the following:
 
-- ❌ Source code of the strategy, execution engine, or connectors
-- ❌ API keys, secrets, or private/wallet keys
-- ❌ Wallet or account addresses
-- ❌ Auth tokens, session cookies, or credentials of any kind
-- ❌ Database connection strings, hostnames, or internal endpoints
-- ❌ Notification topics/webhooks or other operational endpoints
-- ❌ Real account balances, P&L figures, or position data
-- ❌ Server paths, IPs, or deployment specifics that could aid an attacker
+- Source code of the strategy, execution engine, or connectors
+- API keys, secrets, or private/wallet keys
+- Wallet or account addresses
+- Auth tokens, session cookies, or credentials of any kind
+- Database connection strings, hostnames, or internal endpoints
+- Notification topics/webhooks or other operational endpoints
+- Real account balances, P&L figures, or position data
+- Server paths, IPs, or deployment specifics that could aid an attacker
 
 ## What it *does* contain
 
-- ✅ Architecture and data-flow diagrams (Mermaid)
-- ✅ Feature- and design-level descriptions
-- ✅ Technology choices and engineering rationale
+- Architecture and data-flow diagrams (Mermaid)
+- Feature- and design-level descriptions
+- Technology choices and engineering rationale
 
 ## How this repository was assembled
 

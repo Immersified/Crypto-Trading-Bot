@@ -1,13 +1,37 @@
 # CryptoBot — Algorithmic Crypto Trading System
 
-> **Reference overview of a production algorithmic trading platform.**
-> This repository is a *showcase*. It documents the architecture, design decisions and
-> features of a privately-developed crypto trading system through diagrams and write-ups.
-> **It intentionally contains no source code, credentials, or proprietary strategy logic.**
+A reference overview of a production, machine-learning-driven crypto trading platform —
+documented through architecture diagrams, design write-ups, and feature breakdowns.
 
 ---
 
-## 📌 At a glance
+## Disclaimer
+
+This is a **public reference / portfolio** repository. The actual trading system is private.
+To protect both the strategy and any funds, this repository deliberately:
+
+- contains **no source code** of the strategy or execution engine,
+- contains **no API keys, private keys, wallet addresses, tokens, cookies or endpoints**,
+- shows only **architecture, design and feature-level** information.
+
+The content was written by hand from architectural knowledge — no files were copied from the
+private codebase — and scanned for secrets before publishing. See [`SECURITY.md`](SECURITY.md)
+for the full policy.
+
+---
+
+## Component deep-dives
+
+| Component | What it does | Details |
+|---|---|---|
+| **Algorithm layer** | Research, signal modelling & backtesting that produce Trade Sheets | [`docs/algorithm.md`](docs/algorithm.md) |
+| **Data pipeline & infra** | Market-data scrapers, storage, deployment | [`docs/data-pipeline.md`](docs/data-pipeline.md) |
+| **Dashboard (React + API)** | Real-time monitoring & control surface | [`docs/dashboard.md`](docs/dashboard.md) |
+| **Architecture & data model** | How the layers fit together | [`docs/architecture.md`](docs/architecture.md) |
+
+---
+
+## At a glance
 
 CryptoBot is a **fully automated, multi-exchange algorithmic trading platform** for crypto
 perpetual futures, built around a **machine-learning price-prediction system**. It runs
@@ -32,7 +56,7 @@ monitoring dashboard.
 
 ---
 
-## 🧠 What problem does it solve?
+## What problem does it solve?
 
 Manual crypto trading doesn't scale: it can't watch the market 24/7, it's emotional, and it
 can't consistently apply a tested strategy. CryptoBot closes that gap with a clean
@@ -50,31 +74,31 @@ separation between **deciding** and **doing**:
 
 ---
 
-## 🏗️ System architecture
+## System architecture
 
 ```mermaid
 flowchart TB
-    subgraph EXCH["🌐 Exchanges & Market Data"]
+    subgraph EXCH["Exchanges & Market Data"]
         BIN["Binance<br/>(candles + funding)"]
         BYB["Bybit"]
         HL["Hyperliquid"]
     end
 
-    subgraph DATA["📥 Data Pipeline (Python)"]
+    subgraph DATA["Data Pipeline (Python)"]
         SCRAPE["Market-data scrapers<br/>candles · funding · orderbook"]
     end
 
-    subgraph ALGO["🧠 Algorithm Layer (Python)"]
-        MODEL["Signal model + backtesting<br/>→ generates Trade Sheets (CSV)"]
+    subgraph ALGO["Algorithm Layer (Python)"]
+        MODEL["Signal model + backtesting<br/>generates Trade Sheets (CSV)"]
     end
 
-    DB[("🗄️ MongoDB<br/>market data · accounts ·<br/>positions · trade history")]
+    DB[("MongoDB<br/>market data · accounts ·<br/>positions · trade history")]
 
-    subgraph ENGINE["⚙️ Trading Engine (TypeScript)"]
+    subgraph ENGINE["Trading Engine (TypeScript)"]
         EXEC["Order lifecycle engine<br/>connectors · TP/SL · websockets"]
     end
 
-    subgraph MON["📊 Monitoring"]
+    subgraph MON["Monitoring"]
         API["Dashboard API<br/>(Express)"]
         UI["Dashboard UI<br/>(React)"]
         ALERT["Alerting<br/>(push notifications)"]
@@ -105,7 +129,7 @@ flowchart TB
 
 ---
 
-## ✨ Key features
+## Key features
 
 ### Trading & execution
 - **Multi-exchange via a common connector interface** — Hyperliquid, Bybit and Bitvavo all
@@ -136,18 +160,7 @@ flowchart TB
 
 ---
 
-## 🧩 Component deep-dives
-
-| Component | What it does | Details |
-|---|---|---|
-| 🧠 **Algorithm layer** | Research, signal modelling & backtesting → Trade Sheets | [`docs/algorithm.md`](docs/algorithm.md) *(author-maintained)* |
-| 📥 **Data pipeline & infra** | Market-data scrapers, storage, deployment | [`docs/data-pipeline.md`](docs/data-pipeline.md) |
-| 📊 **Dashboard (React + API)** | Real-time monitoring & control surface | [`docs/dashboard.md`](docs/dashboard.md) |
-| 🏛️ **Architecture & data model** | How the layers fit together | [`docs/architecture.md`](docs/architecture.md) |
-
----
-
-## 📈 Results & engineering highlights
+## Results & engineering highlights
 
 The strategy is validated through extensive backtesting and calibration runs across multiple
 assets (ETH, SOL, BTC, AVAX, ADA, LINK, DOT, LTC) and market regimes (bull / bear /
@@ -157,17 +170,17 @@ trading. Selected, measurable outcomes from building and hardening the system:
 
 | Result | Detail |
 |---|---|
-| 🟢 **Live in production since Oct 2025** | Trading Ethereum on Hyperliquid with real capital, unattended. |
-| 🎯 **Closed the sim-to-live gap 4×** | Reduced simulation-to-live profit inaccuracy from **0.216% → 0.052%** by modelling trade-entry delay and reverse-engineering Hyperliquid's execution behaviour. |
-| 🧪 **Cut classifier overfit ~7×** | Diagnosed that a grid-search rule filter was masking feature-level gains; redesigned the test methodology without grid-search, dropping overfit from **12.7% → 1.8%** and lifting accuracy from **62% → 73.5%**. |
-| 🔁 **Robust across regimes** | Redesigned strategy maintains performance across a **2-year** walk-forward, after an earlier version degraded in live trading. |
-| 🗣️ **Stakeholder communication** | Delivered weekly written reports and presentations on performance & methodology to a non-technical advisory board. |
+| **Live in production since Oct 2025** | Trading Ethereum on Hyperliquid with real capital, unattended. |
+| **Closed the sim-to-live gap 4x** | Reduced simulation-to-live profit inaccuracy from **0.216% to 0.052%** by modelling trade-entry delay and reverse-engineering Hyperliquid's execution behaviour. |
+| **Cut classifier overfit ~7x** | Diagnosed that a grid-search rule filter was masking feature-level gains; redesigned the test methodology without grid-search, dropping overfit from **12.7% to 1.8%** and lifting accuracy from **62% to 73.5%**. |
+| **Robust across regimes** | Redesigned strategy maintains performance across a **2-year** walk-forward, after an earlier version degraded in live trading. |
+| **Stakeholder communication** | Delivered weekly written reports and presentations on performance & methodology to a non-technical advisory board. |
 
-> 📷 *Backtest equity curves and performance tables can be added here as screenshots.*
+> *Backtest equity curves and performance tables can be added here as screenshots.*
 
 ---
 
-## 🛠️ Tech stack
+## Tech stack
 
 | Layer | Technologies |
 |---|---|
@@ -177,19 +190,6 @@ trading. Selected, measurable outcomes from building and hardening the system:
 | **Dashboard** | React · TypeScript · Express · REST API |
 | **Infrastructure** | Linux VPS · PM2 · nginx · push-notification alerting |
 | **Tooling** | Jest · ts-jest · ESLint / Prettier |
-
----
-
-## 🔒 A note on this repository
-
-This is a **public reference / portfolio** repository. The actual trading system is
-private. To protect both the strategy and any funds, this repo deliberately:
-
-- contains **no source code** of the strategy or execution engine,
-- contains **no API keys, private keys, wallet addresses, tokens, cookies or endpoints**,
-- shows only **architecture, design and feature-level** information.
-
-See [`SECURITY.md`](SECURITY.md) for the policy followed when assembling this repository.
 
 ---
 

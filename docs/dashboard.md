@@ -2,7 +2,7 @@
 
 A real-time control surface for watching every bot account in one place.
 
-[← Back to README](../README.md)
+[Back to README](../README.md)
 
 ---
 
@@ -86,6 +86,6 @@ flowchart TB
 - **Auth-gated** — a login context guards the dashboard behind authentication.
 - **Mobile-aware** — responsive layout via a dedicated `useIsMobile` hook.
 
-> 📷 *Live dashboard screenshots can be dropped in here.*
+> *Live dashboard screenshots can be dropped in here.*
 
-[← Back to README](../README.md)
+[Back to README](../README.md)

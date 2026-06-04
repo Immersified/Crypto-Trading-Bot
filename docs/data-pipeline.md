@@ -2,7 +2,7 @@
 
 How market data is collected and stored, and how the whole system runs in production.
 
-[← Back to README](../README.md)
+[Back to README](../README.md)
 
 ---
 
@@ -69,7 +69,7 @@ The system runs unattended on a Linux VPS. Long-running processes are supervised
 
 ```mermaid
 flowchart TB
-    subgraph VPS["🐧 Linux VPS"]
+    subgraph VPS["Linux VPS"]
         subgraph PM2["PM2 process manager"]
             P1["Trading engine<br/>(scheduled runs)"]
             P2["Socket / live-sync process"]
@@ -102,4 +102,4 @@ flowchart TB
 - **Alerting** — operational errors are pushed as urgent notifications for immediate
   visibility.
 
-[← Back to README](../README.md)
+[Back to README](../README.md)

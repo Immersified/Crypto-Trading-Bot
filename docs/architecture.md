@@ -3,7 +3,7 @@
 This document explains how CryptoBot's layers fit together and how a trading decision flows
 from raw market data all the way to a live order and back into the dashboard.
 
-[← Back to README](../README.md)
+[Back to README](../README.md)
 
 ---
 
@@ -182,4 +182,4 @@ flowchart TB
     R1 & R2 & R3 --> AGG["Aggregate results<br/>(failures isolated per account)"]
 ```
 
-[← Back to README](../README.md)
+[Back to README](../README.md)
