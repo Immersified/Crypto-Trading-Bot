@@ -1,3 +1,4 @@
+<img width="2225" height="1476" alt="Performance_Individual_Max" src="https://github.com/user-attachments/assets/64ec266c-36a6-4c6b-871f-a5a7b9901e89" />
 <img width="2225" height="1476" alt="Performance_Individual_Max" src="https://github.com/user-attachments/assets/33c2a2e9-e5cc-45d9-a98e-aead68d475ed" />
 # Algorithm Layer
 
@@ -171,9 +172,11 @@ determine the most optimal settings for the upcoming period.
 A walk-forward principle is used, where the settings for each new period are based on the most
 optimal training settings. Optimization metrics such as the **Sharpe ratio** are used. The
 combination of metric and training length that resolves into the most desirable results is
-then used for future trading.
+then used for future trading. An example of such result can be viewed in figure x.
 
-> *Figure: calibration results across training lengths and optimization metrics. (Add image at
-> `assets/calibration-results.png`.)*
+<img width="2225" height="1476" alt="Performance_Individual_Max" src="https://github.com/user-attachments/assets/44e8298b-21a3-4eff-95f1-8447674bdf45" />
+> *Figure: Performance overview of the calibration script.
+> On the x-axis, each number corresponds with a different setting template with the P-values showing how many periods are applied for training.
+> The y-axis displays varying optimize metrics like the Sharpe, Consistency and Martin Ratio and their respective results.*
 
 [Back to README](../README.md)
