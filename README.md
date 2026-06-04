@@ -177,10 +177,14 @@ trading. Selected, measurable outcomes from building and hardening the system:
 | **Stakeholder communication** | Delivered weekly written reports and presentations on performance & methodology to a non-technical advisory board. |
 
 Example Result of Backtest:
-<img width="4400" height="1000" alt="Config Performance" src="https://github.com/user-attachments/assets/c2dfa4ce-5fcb-4c7f-a074-8b7ceaf44672" />
+<p align="center">
+    <img width="4400" height="1000" alt="Config Performance" src="https://github.com/user-attachments/assets/c2dfa4ce-5fcb-4c7f-a074-8b7ceaf44672" />
+</p>
+    
+> *Example Backtest performance overview. Top left displays the net rate of return over time with the legend displaying the average.
+> On the right, a barchart is shown where each bar represents the price change within a period with green being a positive change and red, negative.
+> Bottom left displays the rate of return for each period using a bar chart.*
 
-
-> *Backtest equity curves and performance tables can be added here as screenshots.*
 
 ---
 
