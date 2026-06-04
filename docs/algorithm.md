@@ -156,8 +156,24 @@ Finally, the simulation is built in a modular way to quickly assemble filters an
 a new strategy, increasing the speed of prototyping. Moreover, a test-mode is included to log
 all trading behavior, either through CSV or visualized as in the figure below.
 
-> *Figure: simulation test-mode visualization of trade entries and exits. (Add image at
-> `assets/simulation-visualization.png`.)*
+#### Example — simulation vs. real-life (interactive)
+
+The test-mode visualization below comes from a single ETH calibration run: candlesticks for
+price, horizontal trade levels (take-profit / stop-loss), and entry markers overlaid for
+analysis. The image is a static preview — **open the interactive version** to zoom, pan and
+hover over individual candles and trades (best viewed on desktop).
+
+<p align="center">
+  <a href="https://immersified.github.io/Crypto-Trading-Bot/assets/plots/eth-simulation-vs-reallife.html">
+    <img src="../assets/plots/eth-simulation-vs-reallife.png"
+         alt="ETH simulation vs real-life — candlesticks with trade levels and entry markers"
+         width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://immersified.github.io/Crypto-Trading-Bot/assets/plots/eth-simulation-vs-reallife.html"><b>Open the interactive plot</b></a>
+</p>
 
 ---
 
