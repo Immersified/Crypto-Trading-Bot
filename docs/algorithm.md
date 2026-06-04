@@ -1,3 +1,4 @@
+<img width="2225" height="1476" alt="Performance_Individual_Max" src="https://github.com/user-attachments/assets/33c2a2e9-e5cc-45d9-a98e-aead68d475ed" />
 # Algorithm Layer
 
 The goal of the algorithm is to find market patterns and automatically bet on them when they
