@@ -188,9 +188,4 @@ then used for future trading. An example of such a result can be viewed in Figur
 > On the x-axis, each number corresponds with a different setting template with the P-values showing how many periods are applied for training.
 > The y-axis displays varying optimize metrics like the Sharpe, Consistency and Martin Ratio and their respective results.*
 
-> *Figure 1: An example test-mode output for ETH. The top panel shows price candles with the
-> volume ratio and the indicator overlays that drive the strategy (moving averages, price
-> slope, RSI, lookback levels), with trade markers for long entries, wins and losses. The
-> bottom panel tracks profit performance — rate of return and invested capital — across the run.*
-
 [Back to README](../README.md)
